@@ -29,26 +29,6 @@ This project aims to decode reading goals (i.e. information-seeking versus ordin
     mamba env create -f environment.yaml
     ```
 
-3. **Get the Data by running the data parsing script:**
-    If you have access to the raw data, you can run the `parse_data.py` script to process the data.
-    This script is based on [OneStopGaze-Preprocessing](https://github.com/lacclab/OneStopGaze-Preprocessing).
-
-    To run the script, use the following command:
-
-    ```bash
-    python scripts/parse_data.py
-    ```
-
-4. **Log in to WandB**
-
-    Log in to your WandB account to track and visualize your experiments:
-
-    ```bash
-    wandb login
-    ```
-
-    You'll be prompted to enter the API key from your WandB account.
-
 ## Usage
 
 ### Training
@@ -68,7 +48,7 @@ This project aims to decode reading goals (i.e. information-seeking versus ordin
     If you want the terminal pane to close after the run, add the `--do_not_keep_pane_alive` flag:
 
     ```bash
-    python scripts/run_wrapper.py --data_options "hunting" "gathering" --model_options "roberteye_duplicate_fixation" --trainer "shubi"
+    python scripts/run_wrapper.py --data_options "noreread" --model_options "roberteye_duplicate_fixation" --trainer "shubi"
     ```
 
 3. **Advanced Training:**
@@ -97,17 +77,21 @@ Follow these steps to add a new model:
 
 4. **Update ModelMapping Enum:** Add a new entry for your model to the `ModelMapping` enum in `src/configs/config.py`. This will allow your model to be selected based on the configuration.
 
-## Hyperparameter Tuning with Sweep
+### Others
 
+- Under `scripts` are additional scrips for running hyperparameter tuning and evaluation.
 
-See [detailed instructions](lacclab/Goal-Decoding-from-Eye-Movements/scripts/SWEEPS_README.md).
+This project was developed with the assistance of GitHub Copilot, an AI-powered coding assistant. All generated code was carefully reviewed.
 
-## Note
+## Citation
 
-This project was developed with the assistance of GitHub Copilot, an AI-powered coding assistant for code completion only. All generated code was carefully reviewed.
+If you use this repository, please consider citing the following work:
 
-## Contributing
-
-Run `pre-commit install` to install the pre-commit hooks.
-
-Also use ruff and pylint.
+```bibtex
+@inproceedings{Shubi2024decoding,
+    title={Decoding Reading Goals from Eye Movements},
+    author={Omer Shubi, Cfir Avraham Hadar, Yevgeni Berzak},
+    booktitle={preprint},
+    year={2024},
+}
+```
