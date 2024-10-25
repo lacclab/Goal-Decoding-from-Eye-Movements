@@ -1,9 +1,9 @@
-# Cognitive State Decoding
+# Decoding Reading Goals from Eye Movements
 
 [![python](https://img.shields.io/badge/Python-3.12-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![Ruff](https://github.com/lacclab/Cognitive-State-Decoding/actions/workflows/ruff.yml/badge.svg?branch=main)](https://github.com/lacclab/Cognitive-State-Decoding/actions/workflows/ruff.yml)
 
-This project aims to decode reading goal (i.e. information-seeking versus ordinary reading) using machine learning techniques.
+This project aims to decode reading goals (i.e. information-seeking versus ordinary reading) using machine learning techniques.
+
 ## Getting Started
 
 ### Prerequisites
@@ -17,8 +17,8 @@ This project aims to decode reading goal (i.e. information-seeking versus ordina
     Start by cloning the repository to your local machine:
 
     ```bash
-    git clone https://github.com/lacclab/Cognitive-State-Decoding.git
-    cd Cognitive-State-Decoding
+    git clone https://github.com/lacclab/Goal-Decoding-from-Eye-Movements.git
+    cd Goal-Decoding-from-Eye-Movements
     ```
 
 2. **Create a Virtual Environment**
@@ -26,29 +26,18 @@ This project aims to decode reading goal (i.e. information-seeking versus ordina
     Create a new virtual environment using Mamba (or Conda) and install the dependencies:
 
     ```bash
-    mamba env create -f environment.yaml # or exact_environment.yaml
+    mamba env create -f environment.yaml
     ```
 
-3. **Get the Data**
-
-    You have two options to get the data:
-
-    1. **Directly copy the data files:**
-    Use the `scp` command to copy the data files to your local `data/interim/` directory:
-
-        ```bash
-        scp /data/home/shubi/Cognitive-State-Decoding/data/interim/ia_data_enriched_360_260124.csv /data/home/shubi/Cognitive-State-Decoding/data/interim/fixation_data_enriched_360_260124.csv data/interim/
-        ```
-
-    2. **Run the data parsing script:**
+3. **Get the Data by running the data parsing script:**
     If you have access to the raw data, you can run the `parse_data.py` script to process the data.
     This script is based on [OneStopGaze-Preprocessing](https://github.com/lacclab/OneStopGaze-Preprocessing).
 
-        To run the script, use the following command:
+    To run the script, use the following command:
 
-        ```bash
-        python scripts/parse_data.py
-        ```
+    ```bash
+    python scripts/parse_data.py
+    ```
 
 4. **Log in to WandB**
 
@@ -111,7 +100,7 @@ Follow these steps to add a new model:
 ## Hyperparameter Tuning with Sweep
 
 
-See [detailed instructions](lacclab/Cognitive-State-Decoding/scripts/SWEEPS_README.md).
+See [detailed instructions](lacclab/Goal-Decoding-from-Eye-Movements/scripts/SWEEPS_README.md).
 
 ## Note
 
