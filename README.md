@@ -31,7 +31,7 @@ This project aims to decode reading goals (i.e. information-seeking versus ordin
 
 ## Reproducing the results
 
-1. To train the models including the full hyperparameter sweep run `bash scripts/sweep_wrapper.sh`. This create sweep configuration files. Run of the created files in the terminal. 
+1. To train the models including the full hyperparameter sweep run `bash scripts/sweep_wrapper.sh`. This creates sweep configuration files. Run the created files in the terminal.
 
 2. Then, to get the predictions on the test sets run `bash scripts/eval_wrapper.sh`.
 
